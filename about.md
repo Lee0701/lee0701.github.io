@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-### ㄹㅣ
+### 리
 
 문의 수리비를 받겠다。
 
