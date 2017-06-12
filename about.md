@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+### ㄹㅣ
 
-### More Information
+문의 수리비를 받겠다。
 
-A place to include any other types of information that you'd like to include about yourself.
+### 연락처
 
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+[hgl1002@naver.com](mailto:hgl1002@naver.com)
