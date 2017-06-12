@@ -272,11 +272,11 @@ nav {
 }
 
 article.post {
-  writing-mode: vertical-rl;
   height: 75%;
 }
 
 .container#main {
+  writing-mode: vertical-rl;
   overflow-x: scroll;
 }
 
