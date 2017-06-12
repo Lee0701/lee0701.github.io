@@ -271,6 +271,15 @@ nav {
   }
 }
 
+article.post {
+  writing-mode: vertical-rl;
+  height: 75%;
+}
+
+.container#main {
+  overflow-x: scroll;
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
