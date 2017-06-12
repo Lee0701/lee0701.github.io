@@ -262,7 +262,9 @@ nav {
   }
 
   .comments {
+    width: 300px;
     margin-top: 10px;
+    margin-right: 20px;
   }
 
   .read-more {
@@ -290,6 +292,10 @@ article.post {
 footer {
   padding: 20px 0;
   text-align: center;
+}
+
+#disqus_thread {
+  width: 100%;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
