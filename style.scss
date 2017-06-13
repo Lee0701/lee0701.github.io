@@ -9,6 +9,8 @@
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
 
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
 /**************/
 /* BASE RULES */
 /**************/
@@ -275,6 +277,8 @@ nav {
 
 article.post {
   height: 75%;
+  line-height: 170%;
+  font-family: 'Nanum Myeongjo', 'HanaMinA', 'HanaMinB', serif;
 }
 
 .container#main {
