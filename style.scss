@@ -281,6 +281,11 @@ article {
   font-family: $serif;
 }
 
+article.post {
+  text-align: justify;
+  word-break: keep-all;
+}
+
 article.page {
   font-family: $sans;
 }
