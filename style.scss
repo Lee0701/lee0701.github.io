@@ -281,6 +281,10 @@ article {
   font-family: $serif;
 }
 
+article.page {
+  font-family: $sans;
+}
+
 .container#main {
   -webkit-writing-mode: vertical-rl;
   -moz-writing-mode: vertical-rl;
