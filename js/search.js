@@ -114,8 +114,6 @@ var filterPosts = function(posts, filters) {
 						add = true;
 						continue;
 					}
-					add = false;
-					break;
 				}
 			}
 			if(add) {
