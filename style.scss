@@ -22,7 +22,7 @@ html {
 body {
 	background: $white;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: $black;
 }
 
 .container {
@@ -245,12 +245,6 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
-}
-
-.posts > .post:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
 }
 
 .post {
