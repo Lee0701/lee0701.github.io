@@ -111,14 +111,15 @@ var filterPosts = function(posts, filters) {
 				}
 				for(var j in prop) {
 					var match = filter.match;
-					if(match == "equals" && prop[j].toLowerCase() == filter.value.toLowerCase()) {
-						continue;
-					}
-					else if(match == "like" && prop[j].toLowerCase().includes(filter.value.toLowerCase())) {
-						continue;
-					}
 					add = false;
-					break;
+					if(match == "equals" && prop[j].toLowerCase() == filter.value.toLowerCase()) {
+						add = true;
+						break;
+					}
+					if(match == "like" && prop[j].toLowerCase().includes(filter.value.toLowerCase())) {
+						add = true;
+						break;
+					}
 				}
 			}
 			if(add) {
