@@ -314,11 +314,14 @@ footer {
 #disqus_thread {
   width: 100%;
 }
+
 .tags li {
   float: left;
   font-size: 13px;
   font-size: 1rem;
   line-height: 2.5;
+  list-style: none;
+  padding: 3px;
 }
 
 .tags li a {
@@ -337,6 +340,7 @@ footer {
 
 .post-tags {
   margin-right: 20px;
+  font-family: $sans;
 }
 
 /* normalize.css Clearfix */
