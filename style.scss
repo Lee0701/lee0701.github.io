@@ -285,6 +285,12 @@ article.page {
   font-family: $sans;
 }
 
+sup.punc {
+  position: relative;
+  left: 1ex;
+  bottom: 0.5em;
+}
+
 .container#main {
   -webkit-writing-mode: vertical-rl;
   -moz-writing-mode: vertical-rl;
