@@ -314,6 +314,44 @@ footer {
 #disqus_thread {
   width: 100%;
 }
+.tags li {
+  float: left;
+  font-size: 13px;
+  font-size: 1rem;
+  line-height: 2.5;
+}
+
+.tags li a {
+  padding: 4px 6px;
+  margin: 0px;
+  background-color: #e6e6e6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.tags li a:hover {
+  color: #5e6d74;
+}
+
+.post-tags {
+  margin-right: 20px;
+}
+
+/* normalize.css Clearfix */
+.cf {
+  *zoom: 1
+}
+
+.cf:before, .cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both
+}
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
