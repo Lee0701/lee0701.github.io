@@ -35,8 +35,8 @@ var onSearchLoad = function() {
 			else if((keyValue = andFilters[j].split(":")).length == 2) {
 				filters[i][j] = {
 					property: keyValue[0],
-					value: keyValue[1].
-					match: "like";
+					value: keyValue[1],
+					match: "like"
 				};
 			}
 		}
