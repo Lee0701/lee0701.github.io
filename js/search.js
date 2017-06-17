@@ -3,6 +3,7 @@ var posts = [];
 
 var getParam = function(param) {
 	var queryString = window.location.search.substring(1);
+	queryString = queryString.replace(/\+/g, "%20");
 	queryString = decodeURIComponent(queryString);
 	var queries = queryString.split("&");
 	for(var i in queries) {
