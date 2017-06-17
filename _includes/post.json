@@ -1,7 +1,7 @@
 {
   "title"    : "{{ post.title }}",
   "category" : "{{ post.category }}",
-  "tags"     : [{% for tag in post.tags %}"{{ tag }}",{% endfor %} null],
+  "tags"     : {% if post.tags %} [{% for tag in post.tags %}"{{ tag }}",{% endfor %} null] {% endif %},
   "href"     : "{{ post.url }}",
   "date"     : {
     "day"   : "{{ post.date | date: "%d" }}",
