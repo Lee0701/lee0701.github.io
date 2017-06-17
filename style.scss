@@ -357,6 +357,32 @@ footer {
   clear: both
 }
 
+input[type="text"] {
+	padding: 3px;
+	border: 2px solid #dcdcdc;
+	border-radius: 2px;
+	font-size: 15px;
+}
+
+input[type="text"]:focus {
+	border: 2px solid #888888;
+}
+
+input[type="submit"] {
+	padding: 3px;
+	border: 2px solid #888888;
+	border-radius: 2px;
+	font-size: 15px;
+	background-color: #dcdcdc;
+	color: #222222;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="submit"]:active {
+	background-color: #222222;
+	color: #dcdcdc;
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
