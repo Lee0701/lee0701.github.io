@@ -97,28 +97,26 @@ var filterPosts = function(posts, filters) {
 		
 		for(var f in filters) {
 			var andFilters = filters[f];
-			var prop = post[property];
-			if(prop.constructor == String) {
-				prop = [prop];
-			}
-			if(prop.constructor == Array) {
-				for(var j in prop) {
-					var add = true;
-					for(var a in andFilters) {
-						var filter = andFilters[a];
-						var match = filter.match;
-						if(match == "equals" && prop[j].toLowerCase() == filter.value.toLowerCase()) {
-							continue;
-						}
-						else if(match == "like" && prop[j].toLowerCase().includes(filter.value.toLowerCase())) {
-							continue;
-						}
-						add = false;
-						break;
+			for(var j in prop) {
+				var add = true;
+				for(var a in andFilters) {
+					var filter = andFilters[a];
+					var prop = post[filter.property];
+					if(prop.constructor == String) {
+						prop = [prop];
 					}
-					if(add) {
-						result.push(post);
+					var match = filter.match;
+					if(match == "equals" && prop[j].toLowerCase() == filter.value.toLowerCase()) {
+						continue;
 					}
+					else if(match == "like" && prop[j].toLowerCase().includes(filter.value.toLowerCase())) {
+						continue;
+					}
+					add = false;
+					break;
+				}
+				if(add) {
+					result.push(post);
 				}
 			}
 		}
