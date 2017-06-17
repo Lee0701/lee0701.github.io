@@ -3,7 +3,7 @@ var posts = [];
 
 var getParam = function(param) {
 	var queryString = window.location.search.substring(1);
-	queryString = decodeURI(queryString);
+	queryString = decodeURIComponent(queryString);
 	var queries = queryString.split("&");
 	for(var i in queries) {
 		var pair = queries[i].split("=");
