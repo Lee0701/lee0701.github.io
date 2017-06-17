@@ -97,7 +97,7 @@ var filterPosts = function(posts, filters) {
 		
 		for(var f in filters) {
 			var andFilters = filters[f];
-			var add = true;
+			var add = false;
 			for(var a in andFilters) {
 				var filter = andFilters[a];
 				var prop = post[filter.property];
@@ -107,9 +107,11 @@ var filterPosts = function(posts, filters) {
 				for(var j in prop) {
 					var match = filter.match;
 					if(match == "equals" && prop[j].toLowerCase() == filter.value.toLowerCase()) {
+						add = true;
 						continue;
 					}
 					else if(match == "like" && prop[j].toLowerCase().includes(filter.value.toLowerCase())) {
+						add = true;
 						continue;
 					}
 					add = false;
