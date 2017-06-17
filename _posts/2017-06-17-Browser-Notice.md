@@ -2,7 +2,7 @@
 layout: post
 title: 브라우저 관련 공지
 comments: true
-categories: notice blog
+category: notice blog
 ---
 
 블로그 디자인이 Microsoft Edge와 Internet Explorer 브라우저에서 깨져서 표시되고 있습니다.
