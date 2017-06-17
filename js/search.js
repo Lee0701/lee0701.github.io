@@ -1,8 +1,6 @@
 
 var posts = [];
 
-window.addEventListener('load', onSearchLoad);
-
 var getParam = function(param) {
 	var queryString = window.location.search.substring(1);
 	queryString = decodeURI(queryString);
@@ -38,12 +36,18 @@ var onSearchLoad = function() {
 					value: keyValue[1],
 					match: "like"
 				};
+			} else {
+				filters[i][j] = {
+					property: "title",
+					value: andFilters[j],
+					match: "like"
+				}
 			}
 		}
 	}
 	
 	getJSON('/search.json', function(data) {
-		posts = filterPosts(data, filter);
+		posts = filterPosts(data, filters);
 		if(posts.length == 0) {
 			noResultsPage(query);
 		} else {
@@ -102,7 +106,11 @@ var filterPosts = function(posts, filters) {
 					var add = true;
 					for(var a in andFilters) {
 						var filter = andFilters[a];
-						if(prop[j].toLowerCase() == filter.value.toLowerCase()) {
+						var match = filter.match;
+						if(match == "equals" && prop[j].toLowerCase() == filter.value.toLowerCase()) {
+							continue;
+						}
+						else if(match == "like" && prop[j].toLowerCase().includes(filter.value.toLowerCase())) {
 							continue;
 						}
 						add = false;
@@ -135,3 +143,5 @@ var getJSON = function(path, success, error) {
 	xhr.open("GET", path, true);
 	xhr.send();
 }
+
+window.addEventListener('load', onSearchLoad);
