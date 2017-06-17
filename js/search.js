@@ -105,6 +105,10 @@ var filterPosts = function(posts, filters) {
 				if(prop.constructor == String) {
 					prop = [prop];
 				}
+				if(prop.length == 0) {
+					add = false;
+					break;
+				}
 				for(var j in prop) {
 					var match = filter.match;
 					if(match == "equals" && prop[j].toLowerCase() == filter.value.toLowerCase()) {
