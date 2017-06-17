@@ -6,8 +6,8 @@ var replacePunctuations = function() {
 		var text = entry.innerHTML;
 		text = text.replace(/([^\w])\./g, function(match, g1) {return g1 + "<sup class=\"punc\">。</sup>";});
 		text = text.replace(/([^\w])\,/g, function(match, g1) {return g1 + "<sup class=\"punc\">、</sup>";});
-		text = text.replace(/([^\w])\?/g, function(match, g1) {return g1 + "<sup class=\"punc\">？</sup>";});
-		text = text.replace(/([^\w])\!/g, function(match, g1) {return g1 + "<sup class=\"punc\">！</sup>";});
+		text = text.replace(/([^\w])\?/g, function(match, g1) {return g1 + "？";});
+		text = text.replace(/([^\w])\!/g, function(match, g1) {return g1 + "！";});
 		entry.innerHTML = text;
 	}
 }
