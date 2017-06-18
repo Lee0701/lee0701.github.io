@@ -1,6 +1,6 @@
 {% if page.share %}
 <div class="share">
-	<a onclick="window.open('http://share.naver.com/web/shareView.nhn?url=' + encodeURIComponent('{{ page.url }}') + '&title=' + encodeURIComponent('{{ page.title }}'), '나베르로 공유', 'menubar=1'); return false;" target="_blank">
+	<a onclick="window.open('http://share.naver.com/web/shareView.nhn?url=' + encodeURIComponent('{{ site.url }}{{ page.url }}') + '&title=' + encodeURIComponent('{{ page.title }}'), '나베르로 공유', 'menubar=1'); return false;" target="_blank">
 		<img src="/images/system/naver.png" width="32" height="32">
 	</a>
 </div>
