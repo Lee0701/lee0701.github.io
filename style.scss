@@ -271,6 +271,12 @@ nav {
   }
 }
 
+.comment-count-wrapper {
+  float: right;
+  margin: 20px 12px;
+  text-align: right;
+}
+
 .comment-count {
   color: $gray;
 }

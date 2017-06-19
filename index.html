@@ -6,12 +6,12 @@ layout: default
 {% for post in site.posts %}
 	<article class="post">
 
-		<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-		<p style="text-align: right;">
+		<p class="comment-count-wrapper">
 			<a class="comment-count" href="{{ site.url }}{{ post.url }}#disqus_thread">0 Comments</a>
 		</p>
 		
+		<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
 		<div class="entry">
 			{{ post.excerpt }}
 		</div>
