@@ -250,7 +250,7 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-top: 2px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
     font-size: 22px;
@@ -385,6 +385,10 @@ input[type="submit"] {
 input[type="submit"]:active {
 	background-color: #222222;
 	color: #dcdcdc;
+}
+
+.post img {
+	max-height: 65vh;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
