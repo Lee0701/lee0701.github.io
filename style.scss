@@ -295,10 +295,8 @@ article.page {
   font-family: $sans;
 }
 
-sup.punc {
-  position: relative;
-  left: 1ex;
-  bottom: 0.5em;
+.punc {
+  font-family: sans-serif;
 }
 
 .container#main {
