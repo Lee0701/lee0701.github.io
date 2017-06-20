@@ -76,7 +76,7 @@ var layoutResultsPage = function(query, posts) {
 		var post = posts[i];
 		var li = document.createElement("li");
 		li.innerHTML = ""
-		+ '<a href="' + post.href + '">'
+		+ '<a href="' + post.href + '#main">'
 		+ post.title
 		+ '</a>'
 		+ ' <span class="date">-'
