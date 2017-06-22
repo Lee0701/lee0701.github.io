@@ -121,6 +121,7 @@ var onKanchejaReady = function() {
 var onDefaultLoad = function() {
 	
 	if(typeof(Storage) !== "undefined") {
+		if(localStorage.getItem("hanjaMode") == undefined) localStorage.setItem("hanjaMode", "1");
 		hanjaMode = parseInt(localStorage.getItem("hanjaMode"));
 	}
 	

@@ -6,7 +6,7 @@ permalink: /settings/
 <script>
 	window.addEventListener('load', function() {
 		if(typeof(Storage) !== "undefined") {
-			if(localStorage.getItem("hanjaMode") === undefined) localStorage.setItem("hanjaMode", "1");
+			if(localStorage.getItem("hanjaMode") == undefined) localStorage.setItem("hanjaMode", "1");
 			document.getElementById("hanja-mode").value =  localStorage.getItem("hanjaMode");
 		}
 	});
