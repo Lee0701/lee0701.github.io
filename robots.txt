@@ -7,5 +7,6 @@ Allow: /$
 Allow: /about/
 Allow: /alliances/
 Disallow: /search/
+Allow: /settings/
 {% for post in site.posts %}{% if post.search == true %}Allow: {{ post.url }}{% else %}Disallow: {{ post.url }}{% endif %}
 {% endfor %}
