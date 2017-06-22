@@ -308,6 +308,15 @@ article.page {
   overflow-x: scroll;
 }
 
+.no-vertical {
+  -webkit-writing-mode: horizontal-tb;
+  -moz-writing-mode: horizontal-tb;
+  -ms-writing-mode: lr-tb;
+  -ms-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
+  width: 100%;
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;

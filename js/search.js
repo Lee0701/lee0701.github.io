@@ -47,7 +47,8 @@ var onSearchLoad = function() {
 		}
 	}
 	
-	getJSON('/search.json', function(data) {
+	getText('/search.json', function(data) {
+		data = JSON.parse(data);
 		posts = filterPosts(data, filters);
 		if(posts.length == 0) {
 			noResultsPage(query);
@@ -130,23 +131,6 @@ var filterPosts = function(posts, filters) {
 	}
 	
 	return result;
-}
-
-var getJSON = function(path, success, error) {
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState === XMLHttpRequest.DONE) {
-			if (xhr.status === 200) {
-				if (success)
-					success(JSON.parse(xhr.responseText));
-			} else {
-				if (error)
-					error(xhr);
-			}
-		}
-	};
-	xhr.open("GET", path, true);
-	xhr.send();
 }
 
 window.addEventListener('load', onSearchLoad);
