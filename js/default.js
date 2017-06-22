@@ -1,10 +1,15 @@
 
+var hanja = {};
+var hanjaRegex = [];
 var hanjaWords = {};
 var hanjaWordsRegex = [];
 var shinjache = {};
 var shinjacheRegex = [];
 var kancheja = {};
 var kanchejaRegex = [];
+
+var hanjaLoaded = false;
+var hanjaWordsLoaded = false;
 
 var hanjaMode = 0;
 
@@ -62,6 +67,20 @@ var replaceHanja = function(table, regex) {
 }
 
 var loadDics = function() {
+	getText('/assets/hanja.txt', function(data) {
+		var lines = data.split('\n');
+		for(var i in lines) {
+			var line = lines[i];
+			if(line.charAt(0) == '#') continue;
+			var splitted = line.split('\t');
+			if(splitted.length <= 1) continue;
+			if(splitted[0].length == 0 || splitted[1].length == 0) continue;
+			hanjaRegex.push(splitted[0]);
+			hanja[splitted[0]] = splitted[1];
+		}
+		hanjaRegex = hanjaRegex.join('|');
+		setTimeout(onHanjaReady, 0);
+	});
 	getText('/assets/hanjaWords.txt', function(data) {
 		var lines = data.split('\n');
 		for(var i in lines) {
@@ -106,8 +125,20 @@ var loadDics = function() {
 	});
 }
 
+var onHanjaReady = function() {
+	hanjaLoaded = true;
+	if(hanjaMode == 1 && hanjaWordsLoaded) {
+		replaceHanja(hanjaWords, hanjaWordsRegex);
+		replaceHanja(hanja, hanjaRegex);
+	}
+}
+
 var onHanjaWordsReady = function() {
-	if(hanjaMode == 1) replaceHanja(hanjaWords, hanjaWordsRegex);
+	hanjaWordsLoaded = true;
+	if(hanjaMode == 1 && hanjaLoaded) {
+		replaceHanja(hanjaWords, hanjaWordsRegex);
+		replaceHanja(hanja, hanjaRegex);
+	}
 }
 
 var onShinjacheReady = function() {
