@@ -13,7 +13,7 @@
     {% for page in site.pages %}
     {% if page.layout != nil %}
     {% if page.layout != 'feed' %}
-    {% if page.permalink != '/search/' %}
+    {% if page.search == true %}
     <url>
         <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
     </url>

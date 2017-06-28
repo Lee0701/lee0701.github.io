@@ -3,10 +3,7 @@ layout: null
 permalink: robots.txt
 ---
 User-agent: *
-Allow: /$
-Allow: /about/
-Allow: /alliances/
-Disallow: /search/
-Allow: /settings/
 {% for post in site.posts %}{% if post.search == true %}Allow: {{ post.url }}{% else %}Disallow: {{ post.url }}{% endif %}
+{% endfor %}
+{% for page in site.pages %}{% if page.search == true %}Allow: {{ page.url }}{% else %}Disallow: {{ page.url }}{% endif %}
 {% endfor %}
