@@ -31,7 +31,7 @@ var getText = function(path, success, error) {
 }
 
 var replacePunctuations = function() {
-	var entries = document.getElementsByClassName("entry");
+	var entries = document.getElementsByClassName("vertical");
 	for(var i in entries) {
 		var entry = entries[i];
 		var txt = entry.innerHTML;
@@ -55,7 +55,7 @@ var replaceRemainingHanjas = function(txt) {
 }
 
 var replaceHanja = function(table, regex) {
-	var entries = document.getElementsByClassName("entry");
+	var entries = document.getElementsByClassName("vertical");
 	var len = entries.length;
 	for(var i = 0 ; i < len ; i++) {
 		var entry = entries[i];
