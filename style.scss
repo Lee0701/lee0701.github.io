@@ -299,13 +299,14 @@ article.page {
   font-family: sans-serif;
 }
 
-.container#main {
+.vertical {
   -webkit-writing-mode: vertical-rl;
   -moz-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   -ms-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
   overflow-x: scroll;
+  width: 100%;
 }
 
 .no-vertical {

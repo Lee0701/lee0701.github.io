@@ -3,6 +3,7 @@ layout: default
 search: true
 ---
 
+<div class="vertical">
 <div class="posts">
 {% for post in site.posts %}
 	<article class="post">
@@ -20,4 +21,5 @@ search: true
 		<a href="{{ site.baseurl }}{{ post.url }}#main" class="read-more">Read More</a>
 	</article>
 	{% endfor %}
+</div>
 </div>
