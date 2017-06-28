@@ -212,7 +212,7 @@ img {
   }
 }
 
-nav {
+nav.navigation {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
@@ -236,6 +236,12 @@ nav {
       margin: 0 10px;
       color: $blue;
     }
+  }
+}
+
+.footer nav {
+  a {
+    margin: 0px 10px;
   }
 }
 

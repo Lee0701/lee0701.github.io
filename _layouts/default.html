@@ -30,11 +30,10 @@
             <p class="site-description">{{ site.description }}</p>
           </div>
 
-          <nav>
+          <nav class="navigation">
             <a href="{{ site.baseurl }}/">Blog</a>
+			<a href="{{ site.baseurl }}/wiki">Wiki</a>
             <a href="{{ site.baseurl }}/about">About</a>
-			<a href="{{ site.baseurl }}/alliances">Alliances</a>
-			<a href="{{ site.baseurl }}/settings">Settings</a>
 			<br>
 			<form method="GET" action="/search/" style="text-align: center; margin-top: 20px; margin-left: 20px;">
 				<input type="text" name="query">
@@ -51,6 +50,12 @@
     
     <div class="wrapper-footer">
       <div class="container">
+	    <footer class="footer">
+		  <nav>
+			<a href="{{ site.baseurl }}/alliances">Alliances</a>
+			<a href="{{ site.baseurl }}/settings">Settings</a>
+		  </nav>
+		</footer>
         <footer class="footer">
           {% include svg-icons.html %}
         </footer>
