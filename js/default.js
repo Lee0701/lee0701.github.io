@@ -31,9 +31,11 @@ var getText = function(path, success, error) {
 }
 
 var replacePunctuations = function() {
-	var entries = document.getElementsByClassName("vertical");
+	var entries = document.getElementsByClassName("entry");
 	for(var i in entries) {
 		var entry = entries[i];
+		if(entry.style === undefined) continue;
+		if(window.getComputedStyle(entry).writingMode != "vertical-rl") continue;
 		var txt = entry.innerHTML;
 		if(txt === undefined) continue;
 		txt = txt.replace(/([^\w])\./g, function(match, g1) {return g1 + "<span class=\"punc\">。</span>";});
@@ -55,10 +57,12 @@ var replaceRemainingHanjas = function(txt) {
 }
 
 var replaceHanja = function(table, regex) {
-	var entries = document.getElementsByClassName("vertical");
+	var entries = document.getElementsByClassName("entry");
 	var len = entries.length;
 	for(var i = 0 ; i < len ; i++) {
 		var entry = entries[i];
+		if(entry.style === undefined) continue;
+		if(window.getComputedStyle(entry).writingMode != "vertical-rl") continue;
 		var txt = entry.innerHTML;
 		if(txt === undefined) continue;
 		txt = replaceHanjaTable(txt, table, regex);
