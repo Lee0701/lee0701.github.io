@@ -288,13 +288,13 @@ nav.navigation {
 }
 
 article {
-  height: 75vh;
   line-height: 170%;
-  font-family: $serif;
 }
 
 article.post {
+  height: 75vh;
   text-align: justify;
+  font-family: $serif;
 }
 
 article.page {
