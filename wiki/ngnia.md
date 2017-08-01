@@ -1,7 +1,6 @@
 ---
 layout: wiki
 title: ㅇㄴㅣㅏ
-permalink: /wiki/ngnia/
 ---
 
 ## 개요
