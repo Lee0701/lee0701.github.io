@@ -8,22 +8,34 @@ search: true
 	window.addEventListener('load', function() {
 		if(typeof(Storage) !== "undefined") {
 			if(localStorage.getItem("hanjaMode") == undefined) localStorage.setItem("hanjaMode", "1");
+			if(localStorage.getItem("widthMode") == undefined) localStorage.setItem("widthMode", "0");
 			document.getElementById("hanja-mode").value =  localStorage.getItem("hanjaMode");
+			document.getElementById("width-mode").value =  localStorage.getItem("widthMode");
 		}
 	});
-	var changeMode = function() {
+	var changeHanjaMode = function() {
 		if(typeof(Storage) !== "undefined") {
 			localStorage.setItem("hanjaMode", document.getElementById("hanja-mode").value);
+		}
+	}
+	var changeWidthMode = function() {
+		if(typeof(Storage) !== "undefined") {
+			localStorage.setItem("widthMode", document.getElementById("width-mode").value);
 		}
 	}
 </script>
 <div class="no-vertical">
 	<h1>설정</h1>
 	<h2>한자 표시 모드</h2>
-	<select id="hanja-mode" onchange="changeMode()">
+	<select id="hanja-mode" onchange="changeHanjaMode()">
 		<option value="0">한자를 그대로 표시</option>
 		<option value="1">한자를 한글로 변환</option>
 		<option value="2">한자를 일본 신자체로 변환</option>
 		<option value="3">한자를 중국 간체자로 변환</option>
+	</select>
+	<h2>영문/숫자 표시 모드</h2>
+	<select id="width-mode" onchange="changeWidthMode()">
+		<option value="0">영문과 숫자를 눕혀서 표시 (반각)</option>
+		<option value="1">영문과 숫자를 세워서 표시 (전각)</option>
 	</select>
 </div>

@@ -12,6 +12,7 @@ var hanjaLoaded = false;
 var hanjaWordsLoaded = false;
 
 var hanjaMode = 0;
+var widthMode = 0;
 
 var getText = function(path, success, error) {
 	var xhr = new XMLHttpRequest();
@@ -28,6 +29,19 @@ var getText = function(path, success, error) {
 	};
 	xhr.open("GET", path, true);
 	xhr.send();
+}
+
+var replaceFullWidths = function() {
+	var entries = document.getElementsByClassName("entry");
+	for(var i in entries) {
+		var entry = entries[i];
+		if(entry.style === undefined) continue;
+		if(window.getComputedStyle(entry).writingMode != "vertical-rl") continue;
+		var txt = entry.innerText;
+		if(txt === undefined) continue;
+		txt = txt.replace(/[\u0030-\u0039\u0041-\u005a\u0061-\u007a]/g, function(match) {return String.fromCharCode(match.charCodeAt(0) + 0xfee0);});
+		entry.innerText = txt;
+	}
 }
 
 var replacePunctuations = function() {
@@ -157,10 +171,15 @@ var onDefaultLoad = function() {
 	
 	if(typeof(Storage) !== "undefined") {
 		if(localStorage.getItem("hanjaMode") == undefined) localStorage.setItem("hanjaMode", "1");
+		if(localStorage.getItem("widthMode") == undefined) localStorage.setItem("widthMode", "0");
 		hanjaMode = parseInt(localStorage.getItem("hanjaMode"));
+    widthMode = parseInt(localStorage.getItem("widthMode"));
 	}
-	
+	  
+  if(widthMode == 1) replaceFullWidths();
+  
 	replacePunctuations();
+
 	setTimeout(function() {
 		loadDics();
 	}, 0);
