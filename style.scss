@@ -293,6 +293,49 @@ nav.navigation {
   color: $gray;
 }
 
+form.comment-write-form {
+	.comment-form-label {
+		display: inline-block;
+		min-width: 5em;
+		font-family: $sans
+	}
+	.comment-name {
+		border: 2px solid #dcdcdc;
+		width: 20em;
+		font-size: 15px;
+	}
+	.comment-url {
+		border: 2px solid #dcdcdc;
+		width: 20em;
+		font-size: 15px;
+	}
+	.comment-email {
+		border: 2px solid #dcdcdc;
+		border-radius: 2px;
+		width: 20em;
+		font-size: 15px;
+		padding: 3px;
+	}
+	.comment-content {
+		border: 2px solid #dcdcdc;
+		border-radius: 2px;
+		width: 20em;
+		height: 8ex;
+		font-size: 15px;
+		resize: none;
+	}
+	.comment-form-submit {
+		border: 2px solid #dcdcdc;
+		background-color: #eeeeee;
+		width: 100%;
+		height: 6ex;
+		transition: background-color 0.3s;
+	}
+	.comment-form-submit:active {
+		background-color: #dcdcdc;
+	}
+}
+
 article {
   line-height: 170%;
 }
@@ -425,12 +468,11 @@ input[type="submit"] {
 	font-size: 15px;
 	background-color: #eeeeee;
 	color: #222222;
-	transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s;
 }
 
 input[type="submit"]:active {
 	background-color: #dddddd;
-	color: #dcdcdc;
 }
 
 .post img {

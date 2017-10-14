@@ -30,15 +30,15 @@
 	</div>
 </div>
 <div class="comment-write no-vertical" style="width: auto;">
-	<form method="post" action="https://api.staticman.net/v2/entry/Lee0701/lee0701.github.io/master/comments">
+	<form method="post" action="https://api.staticman.net/v2/entry/Lee0701/lee0701.github.io/master/comments" class="comment-write-form">
 		<input name="options[redirect]" type="hidden" value="{{site.url}}{{ page.url }}">
 		<input name="options[slug]" type="hidden" value="{{ page.slug }}">
-		<p><label>이름<input name="fields[name]" class="comment-name" type="text"></label></p>
-		<p><label>주소<input name="fields[url]" class="comment-url" type="text"></label></p>
-		<p><label>전자메일<input name="fields[email]" class="comment-email" type="email"></label></p>
-		<p><label>내용<textarea name="fields[message]" class="comment-content"></textarea></label></p>
+		<p><label class="comment-form-label">이름</label><input name="fields[name]" class="comment-name" type="text"></p>
+		<p><label class="comment-form-label">주소</label><input name="fields[url]" class="comment-url" type="text"></p>
+		<p><label class="comment-form-label">전자메일</label><input name="fields[email]" class="comment-email" type="email"></p>
+		<p><label class="comment-form-label">내용</label><textarea name="fields[message]" class="comment-content"></textarea></p>
 		
-		<button type="submit">Submit</button>
+		<button type="submit" class="comment-form-submit">Submit</button>
 	</form>
 </div>
 {% endif %}
