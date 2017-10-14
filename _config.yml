@@ -98,6 +98,10 @@ prose:
     - /_includes
   metadata:
     _posts:
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "published"
       - name: "layout"
         field:
           element: "text"
