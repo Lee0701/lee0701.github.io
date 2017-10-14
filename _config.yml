@@ -103,6 +103,10 @@ prose:
           element: "text"
           label: "layout"
           value: "post"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
       - name: "tags"
         field:
           element: "multiselect"
