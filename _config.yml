@@ -108,7 +108,7 @@ prose:
       - search: "search"
         field:
           element: "checkbox"
-      - share "share"
+      - share: "share"
         field:
           element: "checkbox"
       - comments "comments"
