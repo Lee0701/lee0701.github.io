@@ -292,6 +292,10 @@ nav.navigation {
   color: $gray;
 }
 
+.comment {
+	padding-right: 20px;
+}
+
 form.comment-write-form {
 	
 	padding-left: 40px;
@@ -328,6 +332,7 @@ form.comment-write-form {
 	}
 	.comment-form-submit {
 		border: 2px solid #dcdcdc;
+		border-radius: 2px;
 		background-color: #eeeeee;
 		width: 100%;
 		height: 6ex;
