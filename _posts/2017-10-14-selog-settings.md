@@ -5,7 +5,7 @@ search: true
 share: false
 comments: true
 disqus: false
-title: 세로그 설정
+title: 세로그 설정 화면
 tags:
   - blog
   - notice
