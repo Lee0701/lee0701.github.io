@@ -111,12 +111,12 @@ prose:
       - share: "share"
         field:
           element: "checkbox"
-      - comments "comments"
+      - comments: "comments"
         field:
           element: "checkbox"
-      - disqus "disqus"
+      - disqus: "disqus"
         field:
           element: "checkbox"
-      - share "share"
+      - share: "share"
         field:
           element: "checkbox"
