@@ -109,23 +109,19 @@ prose:
           alterable: "true"
           label: "tags"
           placeholder: "Choose Tags"
-      - search: "search"
+      - name: "search"
         field:
           element: "checkbox"
           label: "search"
-      - share: "share"
+      - name: "share"
         field:
           element: "checkbox"
           label: "share"
-      - comments: "comments"
+      - name: "comments"
         field:
           element: "checkbox"
           label: "comments"
-      - disqus: "disqus"
+      - name: "disqus"
         field:
           element: "checkbox"
           label: "disqus"
-      - share: "share"
-        field:
-          element: "checkbox"
-          label: "share"
