@@ -5,7 +5,7 @@ search: true
 share: false
 comments: true
 disqus: false
-title: Selog-Settings
+title: 세로그 설정
 tags:
   - blog
   - notice
