@@ -101,22 +101,31 @@ prose:
       - name: "layout"
         field:
           element: "text"
+          label: "layout"
           value: "post"
       - name: "tags"
         field:
-          element: "text"
+          element: "multiselect"
+          alterable: "true"
+          label: "tags"
+          placeholder: "Choose Tags"
       - search: "search"
         field:
           element: "checkbox"
+          label: "search"
       - share: "share"
         field:
           element: "checkbox"
+          label: "share"
       - comments: "comments"
         field:
           element: "checkbox"
+          label: "comments"
       - disqus: "disqus"
         field:
           element: "checkbox"
+          label: "disqus"
       - share: "share"
         field:
           element: "checkbox"
+          label: "share"
