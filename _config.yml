@@ -87,7 +87,7 @@ exclude:
   - README.md
   - CNAME
 
-  prose:
+prose:
   rooturl: '_posts'
   siteurl: 'http://lee0701.github.io'
   media: 'media'
