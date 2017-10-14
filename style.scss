@@ -293,6 +293,9 @@ nav.navigation {
 }
 
 form.comment-write-form {
+	
+	padding-left: 40px;
+	
 	.comment-form-label {
 		display: inline-block;
 		min-width: 5em;
@@ -328,6 +331,7 @@ form.comment-write-form {
 		background-color: #eeeeee;
 		width: 100%;
 		height: 6ex;
+		font-size: 15px;
 		transition: background-color 0.3s;
 	}
 	.comment-form-submit:active {
