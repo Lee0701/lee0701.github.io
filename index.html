@@ -9,7 +9,9 @@ search: true
 	<article class="post">
 
 		<p class="comment-count-wrapper">
-			<a class="comment-count" href="{{ site.url }}{{ post.url }}#disqus_thread">0 Comments</a>
+			{% if site.data.comments[post.slug] %}
+				<a class="comment-count" href="{{ site.url }}{{ post.url }}#comments">덧글 {{ site.data.comments[post.slug] | size }}개</a>
+			{% endif %}
 		</p>
 		
 		<h1><a href="{{ site.baseurl }}{{ post.url }}#main">{{ post.title }}</a></h1>

@@ -1,5 +1,5 @@
 {% if page.comments %}
-<div class="comments staticman-comments">
+<div class="comments staticman-comments" id="comments">
 	<div class="comments-list">
 		{% if site.data.comments[page.slug] %}
 			{% assign comments = site.data.comments[page.slug] | sort %}
