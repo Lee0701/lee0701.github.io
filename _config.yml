@@ -87,6 +87,8 @@ exclude:
   - README.md
   - CNAME
 
+timezone: Asia/Seoul
+
 prose:
   rooturl: '_posts'
   siteurl: 'http://lee0701.github.io'
