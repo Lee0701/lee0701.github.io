@@ -1,10 +1,9 @@
 ---
-published: false
 layout: post
 title: 덧글 시스템 개편
 tags:
-  - blog
-  - notice
+ - blog
+ - notice
 comments: true
 search: true
 ---
