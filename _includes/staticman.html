@@ -33,12 +33,12 @@
 	<form method="post" action="https://api.staticman.net/v2/entry/Lee0701/lee0701.github.io/master/comments" class="comment-write-form">
 		<input name="options[redirect]" type="hidden" value="{{site.url}}{{ page.url }}">
 		<input name="options[slug]" type="hidden" value="{{ page.slug }}">
-		<p><label class="comment-form-label">이름</label><input name="fields[name]" class="comment-name" type="text"></p>
+		<p><label class="comment-form-label">이름</label><input name="fields[name]" class="comment-name" type="text" id="comment-name"></p>
 		<p><label class="comment-form-label">주소</label><input name="fields[url]" class="comment-url" type="text"></p>
-		<p><label class="comment-form-label">전자메일</label><input name="fields[email]" class="comment-email" type="email"></p>
-		<p><label class="comment-form-label">내용</label><textarea name="fields[message]" class="comment-content"></textarea></p>
+		<p><label class="comment-form-label">전자메일</label><input name="fields[email]" class="comment-email" type="email" id="comment-email"></p>
+		<p><label class="comment-form-label">내용</label><textarea name="fields[message]" class="comment-content" id="comment-content"></textarea></p>
 		
-		<button type="submit" id="comment-submit" class="comment-form-submit">등록</button>
+		<button type="submit" id="comment-submit" onclick="return registerComment();" class="comment-form-submit" id="comment-submit">등록</button>
 	</form>
 </div>
 {% endif %}
