@@ -1,11 +1,41 @@
 {% if page.comments %}
 <div class="comments staticman-comments">
+	<div class="comments-list">
+		{% if site.data.comments[page.slug] %}
+			{% assign comments = site.data.comments[page.slug] | sort %}
+			{% for comment in comments %}
+				<article id="comment{{ forloop.index }}" class="comment">
+					<div class="comment-content">
+						<h3 class="comment-author">
+							{% if comment[1].url %}
+								<a rel="nofollow" href="{{ comment[1].url }}">{{ comment[1].name }}</a>
+							{% else %}
+								{{ comment[1].name }}
+							{% endif %}
+						</h3>
+						<p class="comment-date">
+							{% if comment[1].date %}
+								{% if forloop.index %}<a href="#comment{{ forloop.index }}">{% endif %}
+								{{ comment[1].date | date: "%Y. %m. %d. %H:%M" }}
+								{% if forloop.index %}</a>{% endif %}
+							{% endif %}
+						</p>
+						<div class="comment-body entry">
+							{{ comment[1].message | markdownify }}
+						</div>
+					</div>
+				</article>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>
+<div class="comment-write no-vertical" style="width: auto;">
 	<form method="post" action="https://api.staticman.net/v2/entry/Lee0701/lee0701.github.io/master/comments">
 		<input name="options[redirect]" type="hidden" value="{{site.url}}{{ page.url }}">
 		<input name="options[slug]" type="hidden" value="{{ page.slug }}">
-		<label><input name="fields[name]" type="text">Name</label>
-		<label><input name="fields[email]" type="email">E-mail</label>
-		<label><textarea name="fields[message]"></textarea>Message</label>
+		<p><label>이름<input name="fields[name]" class="comment-name" type="text"></label></p>
+		<p><label>전자메일<input name="fields[email]" class="comment-email" type="email"></label></p>
+		<p><label>내용<textarea name="fields[message]" class="comment-content"></textarea></label></p>
 		
 		<button type="submit">Submit</button>
 	</form>

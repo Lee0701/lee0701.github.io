@@ -270,6 +270,12 @@ nav.navigation {
     margin-right: 20px;
     overflow-y: scroll;
   }
+  
+  .staticman-comments {
+	  width: auto;
+	  max-width: auto;
+	  padding-left: 40px;
+  }
 
   .read-more {
     text-transform: uppercase;
