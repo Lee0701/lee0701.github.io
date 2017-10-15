@@ -10,11 +10,11 @@ search: true
 
 		<p class="comment-count-wrapper">
 			{% if site.data.comments[post.slug] %}
-				<a class="comment-count" href="{{ site.url }}{{ post.url }}#comments">덧글 {{ site.data.comments[post.slug] | size }}개</a>
+				<a class="comment-count half-entry" href="{{ site.url }}{{ post.url }}#comments">덧글 {{ site.data.comments[post.slug] | size }}개</a>
 			{% endif %}
 		</p>
 		
-		<h1><a href="{{ site.baseurl }}{{ post.url }}#main">{{ post.title }}</a></h1>
+		<h1><a href="{{ site.baseurl }}{{ post.url }}#main" class="half-entry">{{ post.title }}</a></h1>
 
 		<div class="punc-entry half-entry hanja-entry">
 			{{ post.content | strip_html | truncatewords:15, "…" }}

@@ -4,7 +4,7 @@ layout: default
 
 <div class="vertical">
 <article class="post">
-	<h1>{{ page.title }}</h1>
+	<h1 class="half-entry">{{ page.title }}</h1>
 
 	<div class="punc-entry half-entry hanja-entry">
 		{{ content }}
@@ -12,11 +12,11 @@ layout: default
 	
 	<ul class="tags post-tags cf">
 		{% for tag in page.tags %}
-		<li><a href="/search?query=tags::{{ tag }}">{{ tag | downcase }}</a></li>
+		<li><a href="/search?query=tags::{{ tag }}" class="half-entry">{{ tag | downcase }}</a></li>
 		{% endfor %}
 	</ul>
 	
-	<div class="date">
+	<div class="date half-entry">
 		작성일자: {{ page.date | date: "%Y. %m. %d." }}
 	</div>
 	
