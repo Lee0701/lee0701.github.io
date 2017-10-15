@@ -60,9 +60,10 @@ var replacePunctuations = function() {
 	}
 }
 
-var replaceHanjaTable = function(txt, table, regex) {
+var replaceHanjaTable = function(txt, table, regex, ruby=false) {
 	txt = txt.replace(new RegExp(regex, 'g'), function(matched) {
-		return table[matched];
+    if(ruby) return '<ruby>' + matched + '<rp>(</rp><rt>' + table[matched] + '</rt><rp>)</rp></ruby>';
+		else return table[matched];
 	});
 	return txt;
 }
@@ -70,7 +71,7 @@ var replaceHanjaTable = function(txt, table, regex) {
 var replaceRemainingHanjas = function(txt) {
 }
 
-var replaceHanja = function(table, regex) {
+var replaceHanja = function(table, regex, ruby=false) {
 	var entries = document.getElementsByClassName("hanja-entry");
 	var len = entries.length;
 	for(var i = 0 ; i < len ; i++) {
@@ -78,7 +79,7 @@ var replaceHanja = function(table, regex) {
 		if(entry.style === undefined) continue;
 		var txt = entry.innerHTML;
 		if(txt === undefined) continue;
-		txt = replaceHanjaTable(txt, table, regex);
+		txt = replaceHanjaTable(txt, table, regex, ruby);
 		entry.innerHTML = txt;
 	}
 }
@@ -95,7 +96,7 @@ var loadDics = function() {
 			hanjaRegex.push(splitted[0]);
 			hanja[splitted[0]] = splitted[1];
 		}
-		hanjaRegex = hanjaRegex.join('|');
+		hanjaRegex = '(?!<ruby>.*)(' + hanjaRegex.join('|') + ')(?!.*<\/ruby>)';
 		setTimeout(onHanjaReady, 0);
 	});
 	getText('/assets/hanjaWords.txt', function(data) {
@@ -148,6 +149,10 @@ var onHanjaReady = function() {
 		replaceHanja(hanjaWords, hanjaWordsRegex);
 		replaceHanja(hanja, hanjaRegex);
 	}
+	if(hanjaMode == 4 && hanjaWordsLoaded) {
+		replaceHanja(hanjaWords, hanjaWordsRegex, true);
+		replaceHanja(hanja, hanjaRegex, true);
+	}
 }
 
 var onHanjaWordsReady = function() {
@@ -155,6 +160,10 @@ var onHanjaWordsReady = function() {
 	if(hanjaMode == 1 && hanjaLoaded) {
 		replaceHanja(hanjaWords, hanjaWordsRegex);
 		replaceHanja(hanja, hanjaRegex);
+	}
+	if(hanjaMode == 4 && hanjaLoaded) {
+		replaceHanja(hanjaWords, hanjaWordsRegex, true);
+		replaceHanja(hanja, hanjaRegex, true);
 	}
 }
 
