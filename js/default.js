@@ -37,10 +37,10 @@ var replaceFullWidths = function() {
 		var entry = entries[i];
 		if(entry.style === undefined) continue;
 		if(window.getComputedStyle(entry).writingMode != "vertical-rl") continue;
-		var txt = entry.innerText;
+		var txt = entry.innerHTML;
 		if(txt === undefined) continue;
-		txt = txt.replace(/[\u0030-\u0039\u0041-\u005a\u0061-\u007a]/g, function(match) {return String.fromCharCode(match.charCodeAt(0) + 0xfee0);});
-		entry.innerText = txt;
+		txt = txt.replace(/(<[^>]*>)+|([\u0030-\u0039\u0041-\u005a\u0061-\u007a])/g, function(match, g1, g2, g3) {return !g2 ? match : String.fromCharCode(g2.charCodeAt(0) + 0xfee0);});
+		entry.innerHTML = txt;
 	}
 }
 

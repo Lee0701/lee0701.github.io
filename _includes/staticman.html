@@ -6,7 +6,7 @@
 			{% for comment in comments %}
 				<article id="comment{{ forloop.index }}" class="comment">
 					<div class="comment-content">
-						<h3 class="comment-author">
+						<h3 class="comment-author half-entry">
 							{% if comment[1].url %}
 								<a rel="nofollow" href="//{{ comment[1].url }}">{{ comment[1].name }}</a>
 							{% else %}
@@ -16,7 +16,7 @@
 						<div class="comment-body punc-entry half-entry hanja-entry">
 							{{ comment[1].message | markdownify }}
 						</div>
-						<p class="comment-date">
+						<p class="comment-date half-entry">
 							{% if comment[1].date %}
 								{% if forloop.index %}<a href="#comment{{ forloop.index }}">{% endif %}
 								{{ comment[1].date | date: "%Y. %m. %d. %H:%M" }}
