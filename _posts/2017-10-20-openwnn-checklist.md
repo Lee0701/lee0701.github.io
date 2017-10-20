@@ -1,11 +1,11 @@
 ---
-published: false
+published: true
 layout: post
 search: true
 share: true
 comments: true
 disqus: false
-title: OpenWnn-Checklist
+title: OpenWnn 체크리스트
 tags:
   - openwnn
 ---
