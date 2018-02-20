@@ -1,6 +1,23 @@
 
 var posts = [];
 
+var getText = function(path, success, error) {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === XMLHttpRequest.DONE) {
+			if (xhr.status === 200) {
+				if (success)
+					success(xhr.responseText);
+			} else {
+				if (error)
+					error(xhr);
+			}
+		}
+	};
+	xhr.open("GET", path, true);
+	xhr.send();
+}
+
 var getParam = function(param) {
 	var queryString = window.location.search.substring(1);
 	queryString = queryString.replace(/\+/g, "%20");
