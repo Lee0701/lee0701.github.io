@@ -1,0 +1,12 @@
+{% for hanja in site.data.hanja.hanjaSalted %}
+	{% assign content = content | replace: hanja.hanja, hanja.salted %}
+{% endfor %}
+
+{% for hanja in site.data.hanja.hanjaWordsSalted %}
+	{% assign tag = '<span class="tooltip">' | append: hanja.word 
+	| append: '<span class="tooltiptext">' | append: hanja.reading | append: '</span></span>' %}
+	{% assign content = content | replace: hanja.salted, tag %}
+{% endfor %}
+{% for hanja in site.data.hanja.hanjaSalted %}
+	{% assign content = content | replace: hanja.salted, hanja.reading %}
+{% endfor %}

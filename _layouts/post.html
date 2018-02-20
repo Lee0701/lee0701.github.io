@@ -4,6 +4,7 @@ layout: default
 
 <div class="vertical">
 <article class="post">
+	{% include hanja.html %}
 	<h1 class="half-entry">{{ page.title }}</h1>
 
 	<div class="punc-entry half-entry hanja-entry">
@@ -21,8 +22,6 @@ layout: default
 	</div>
 	
 	{% include share.html %}
-	
-	{% include disqus.html %}
 	
 	{% include staticman.html %}
 </article>

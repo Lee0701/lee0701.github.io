@@ -1,0 +1,21 @@
+<article id="comment{{ include.index }}" class="comment">
+	<div class="comment-content">
+		<h3 class="comment-author half-entry">
+			{% if include.url %}
+				<a rel="nofollow" href="//{{ include.url }}">{{ include.name }}</a>
+			{% else %}
+				{{ include.name }}
+			{% endif %}
+		</h3>
+		<div class="comment-body punc-entry half-entry hanja-entry">
+			{{ include.message | markdownify }}
+		</div>
+		<p class=	"comment-date half-entry">
+			{% if include.date %}
+				{% if include.index %}<a href="#comment{{ include.index }}">{% endif %}
+				{{ include.date | date: "%Y. %m. %d. %H:%M" }}
+				{% if include.index %}</a>{% endif %}
+			{% endif %}
+		</p>
+	</div>
+</article>
