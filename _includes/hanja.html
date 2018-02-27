@@ -10,3 +10,5 @@
 {% for hanja in site.data.hanja.hanjaSalted %}
 	{% assign content = content | replace: hanja.salted, hanja.reading %}
 {% endfor %}
+
+{% assign content = content | replace: '.', '<span class="punc">。</span>' | replace: ',', '<span class="punc">、</span>’ %}
