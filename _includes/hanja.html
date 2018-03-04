@@ -8,7 +8,9 @@
 	{% assign content = content | replace: hanja.salted, tag %}
 {% endfor %}
 {% for hanja in site.data.hanja.hanjaSalted %}
-	{% assign content = content | replace: hanja.salted, hanja.reading %}
+	{% assign tag = '<span class="tooltip">' | append: hanja.hanja 
+	| append: '<span class="tooltiptext">' | append: hanja.reading | append: '</span></span>' %}
+	{% assign content = content | replace: hanja.salted, tag %}
 {% endfor %}
 
 {% assign content = content | replace: '.', '<span class="punc">。</span>' | replace: ',', '<span class="punc">、</span>’ %}
