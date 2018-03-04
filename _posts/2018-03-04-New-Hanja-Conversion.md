@@ -4,7 +4,7 @@ search: true
 share: false
 comments: true
 disqus: false
-title: New-Hanja-Conversion
+title: 한자 변환 시스템 개편
 tags:
   - blog
   - notice
