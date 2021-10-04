@@ -1,71 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
+    
     {% include meta.html %}
     <meta name="naver-site-verification" content="c62f055bb32cfe98887228ef04e3256a221bfca0"/>
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-	
-	<link rel="icon" href="images/system/favicon-16.png" sizes="16x16">
-	<link rel="icon" href="images/system/favicon-32.png" sizes="32x32">
-	<link rel="icon" href="images/system/favicon-48.png" sizes="48x48">
-	<link rel="icon" href="images/system/favicon-64.png" sizes="64x64">
-	<link rel="icon" href="images/system/favicon-128.png" sizes="128x128">
-	
-	<script src="/js/default.js"></script>
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
-
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav class="navigation hanja-entry">
-            <a href="{{ site.baseurl }}/">記事</a>
-			<a href="{{ site.baseurl }}/wiki">百科</a>
-            <a href="{{ site.baseurl }}/about">情報</a>
-			<br>
-			<form method="GET" action="/search/" style="text-align: center; margin-top: 20px; margin-left: 20px;">
-				<input type="text" name="query">
-				<input type="submit" value="檢索">
-			</form>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-    <div id="main" role="main" class="container" id="main">
-      {{ content }}
-    </div>
     
-    <div class="wrapper-footer">
-      <div class="container">
-	    <footer class="footer">
-		  <nav class="hanja-entry">
-			<a href="{{ site.baseurl }}/alliances">同盟</a>
-		  </nav>
-		</footer>
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
-</html>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+        
+        <link rel="icon" href="images/system/favicon-16.png" sizes="16x16">
+        <link rel="icon" href="images/system/favicon-32.png" sizes="32x32">
+        <link rel="icon" href="images/system/favicon-48.png" sizes="48x48">
+        <link rel="icon" href="images/system/favicon-64.png" sizes="64x64">
+        <link rel="icon" href="images/system/favicon-128.png" sizes="128x128">
+        
+        <script src="/js/default.js"></script>
+    </head>
+    
+    <body>
+        <div class="wrapper-masthead">
+            <div class="container">
+                <header class="masthead clearfix">
+                    <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+                    
+                    <div class="site-info">
+                        <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+                        <p class="site-description">{{ site.description }}</p>
+                    </div>
+                    
+                    <nav class="navigation hanja-entry">
+                        <a href="{{ site.baseurl }}/">記事</a>
+                        <a href="{{ site.baseurl }}/about">情報</a>
+                        <a href="{{ site.baseurl }}/alliances">同盟</a>
+                        <br>
+                        <form method="GET" action="/search/" style="text-align: center; margin-top: 20px; margin-left: 20px;">
+                            <input type="text" name="query">
+                            <input type="submit" value="檢索">
+                        </form>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        
+        <div id="main" role="main" class="container" id="main">
+            {{ content }}
+        </div>
+        
+        <div class="wrapper-footer">
+            <div class="container">
+                <footer class="footer">
+                    <nav class="hanja-entry">
+                    </nav>
+                </footer>
+                <footer class="footer">
+                    {% include svg-icons.html %}
+                </footer>
+            </div>
+        </div>
+        
+        {% include analytics.html %}
+    </body>
+    </html>
+    
